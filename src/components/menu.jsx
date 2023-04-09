@@ -44,19 +44,19 @@ function Menu() {
             <Nav.Link>
               {" "}
               <Link className="text-decoration-none text-white" to="/customer">
-                Customer
+                Customer*
               </Link>
             </Nav.Link>
             <Nav.Link>
               {" "}
               <Link className="text-decoration-none text-white" to="/upload">
-                Image Upload
+                Image Upload*
               </Link>
             </Nav.Link>
             <Nav.Link>
               {" "}
               <Link className="text-decoration-none text-white" to="/uploadpdf">
-                View PDF
+                View PDF*
               </Link>
             </Nav.Link>
           </Nav>

@@ -25,7 +25,7 @@ class FilesUploadComponent extends Component {
     const formData = new FormData();
     formData.append("profileImg", this.state.profileImg);
     axios
-      .post("http://localhost:5000/users/user-profile", formData, {})
+      .post("http://localhost:5000/profile/user-profile", formData, {})
       // .then(res => {
       //     console.log(res)
       // })

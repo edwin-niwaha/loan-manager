@@ -1,23 +1,30 @@
 import express from "express";
+import * as dotenv from "dotenv";
+import mongoose from "mongoose";
 import cors from "cors";
-import db from "./db.js";
 
 // import  routes
 import userRouter from "./routes/user.routes.js";
 import customerRouter from "./routes/customers.js";
-import contactRouter from "./routes/contact.routes.js";
+
+dotenv.config();
 
 const app = express();
-const port = db.PORT || 3081;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
 app.use("/public", express.static("public"));
 
+const url = process.env.DB_URI;
+await mongoose
+  .connect(url)
+  .then(() => console.log(`MongoDB connection established.`))
+  .catch((error) => console.error("MongoDB connection failed:", error.message));
+
 // use routes
 app.use("/customers", customerRouter);
 app.use("/users", userRouter);
-app.use("/contact", contactRouter);
 
 app.use((req, res, next) => {
   setImmediate(() => {

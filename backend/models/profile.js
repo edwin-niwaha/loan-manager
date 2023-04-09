@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const profileSchema = new Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
     profileImg: {
@@ -9,8 +9,8 @@ const userSchema = new Schema(
     },
   },
   {
-    collection: "users",
+    collection: "Profiles",
   }
 );
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("Profiles", profileSchema);
