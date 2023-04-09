@@ -13,6 +13,7 @@ const sequelize = new Sequelize("loan_mger", "root", "_Pearl!22@", {
   },
 });
 
+db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 sequelize

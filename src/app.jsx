@@ -8,7 +8,13 @@ import Error from "./pages/error";
 import Customer from "./pages/customer";
 import Upload from "./pages/uploadimg";
 import Uploadpdf from "./pages/uploadpdf";
+
 import Menu from "./components/menu";
+// import Navbar from "./components/Navbar";
+// import Landing from "./components/Landing";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -21,7 +27,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/customer" element={<Customer />} />
           <Route path="/upload" element={<Upload />} />
-          <Route path="uploadpdf" element={<Uploadpdf />} />
+          <Route path="/uploadpdf" element={<Uploadpdf />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/profile" element={<Profile />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

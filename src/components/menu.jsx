@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../components/style.css";
+// import "../components/style.css";
 
 function Menu() {
   return (
@@ -17,7 +17,7 @@ function Menu() {
       className="p-3"
     >
       <Container>
-        <img id="logoln" src="/svg.jpg" />
+        {/* <img id="logoln" src="/svg.jpg" /> */}
         &nbsp;&nbsp;
         <Navbar.Brand href="#home">LOAN MANAGER</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -44,7 +44,7 @@ function Menu() {
             <Nav.Link>
               {" "}
               <Link className="text-decoration-none text-white" to="/customer">
-                Customer*
+                Customer
               </Link>
             </Nav.Link>
             <Nav.Link>
@@ -61,13 +61,13 @@ function Menu() {
             </Nav.Link>
           </Nav>
           <Nav className="gap-2">
-            <Nav.Link className="btn btn-primary" href="#">
+            <Nav.Link className="btn btn-primary" href="/login">
               Login
             </Nav.Link>
             <Nav.Link
               eventKey={2}
               className="btn btn-light text-black"
-              href="/signup"
+              href="/register"
             >
               Sign up
             </Nav.Link>

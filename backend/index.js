@@ -4,7 +4,7 @@ import db from "./database/db.js";
 
 // import  routes
 import profileRouter from "./routes/profile.js";
-import customerRouter from "./routes/customers.js";
+import customerRouter from "./routes/customers.routes.js";
 import contactRouter from "./routes/contact.routes.js";
 
 const app = express();

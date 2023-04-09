@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 import db from "../database/db.js";
 
 const router = Router();
@@ -12,7 +11,7 @@ router.post("/add", (req, res) => {
 
   const sql = `INSERT INTO contacts (c_name, email, mobileNumber, message, createdAt) 
   VALUES ("${c_name}", "${email}", "${mobileNumber}", "${message}", NOW())`;
-  db.query(sql, function (err, result) {
+  db.sequelize.query(sql, function (err, result) {
     if (err) throw err;
     console.log("record inserted");
     // req.flash("success", "Data added successfully!");

@@ -18,6 +18,7 @@ class Customer extends Component {
   }
 
   onClickAdd = (event) => {
+    // alert("An essay was submitted: " + this.state.value);
     event.preventDefault();
     const { C_name, Email, MobileNumber, Message } = this.state;
     const formValues = {
@@ -52,71 +53,65 @@ class Customer extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="form-wrapper">
-          <form>
-            <div className="textboxfrm">
-              <label>
-                {" "}
-                Name
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 mt-5 mx-auto">
+            <form>
+              <h1 className="h3 mb-3 font-weight-normal">Contact Us</h1>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
                 <input
-                  name="c_name"
                   type="text"
-                  className="textboxfrm"
+                  className="form-control"
+                  name="c_name"
+                  placeholder="Enter your name"
                   value={this.state.C_name}
                   onChange={this.handleC_nameChange}
                 />
-              </label>
-            </div>
-            <div className="textboxfrm">
-              <label>
-                {" "}
-                Email{" "}
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email address</label>
                 <input
+                  type="email"
+                  className="form-control"
                   name="email"
-                  type="text"
-                  className="textboxfrm"
+                  placeholder="Enter your emal"
                   value={this.state.Email}
                   onChange={this.handleEmailChange}
-                />{" "}
-              </label>
-            </div>
-            <div className="textboxfrm">
-              <label>
-                {" "}
-                Mobile Number{" "}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Mobile Number </label>
                 <input
+                  type="mobileNumber"
+                  className="form-control"
                   name="mobileNumber"
-                  type="text"
-                  className="textboxfrm"
+                  placeholder="Enter mobile number"
                   value={this.state.MobileNumber}
                   onChange={this.handleMobileNumberChange}
-                />{" "}
-              </label>
-            </div>
-            <div className="textboxfrm">
-              <label>
-                {" "}
-                Message
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
                 <input
-                  name="message"
                   type="text"
-                  className="textboxfrm"
+                  className="form-control"
+                  name="message"
+                  placeholder="Enter the message"
                   value={this.state.Message}
                   onChange={this.handleMessageChange}
-                />{" "}
-              </label>
-            </div>
-            <div className="textboxfrm">
+                />
+              </div>
+              <br />
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-lg btn-primary btn-block"
                 onClick={this.onClickAdd}
               >
-                Submit
+                Submit!
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );

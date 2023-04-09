@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 
 class Customer extends Component {
   constructor(props) {
@@ -26,18 +29,11 @@ class Customer extends Component {
 
     console.log(formValues);
 
-    axios.post('http://localhost:5000/customers/add', formValues)
-    .then(res =>  
-        NotificationManager.success("Customer added successfully", 'Success'));
-
-    // fetch("http://localhost:5000/customers/add", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formValues),
-    // });
-
+    axios
+      .post("http://localhost:3081/customers/add", formValues)
+      .then((res) =>
+        NotificationManager.success("Customer added successfully", "Success")
+      );
   };
 
   handleCustomerNameChange = (e) => {
@@ -56,75 +52,66 @@ class Customer extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-      <div className="form-wrapper">
-      <form>
-        <div className="form-group">
-          <h3>+ Customer</h3>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 mt-5 mx-auto">
+            <form>
+              <h1 className="h3 mb-3 font-weight-normal">Register Customer</h1>
+              <div className="form-group">
+                <label htmlFor="customerName">Customer Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="customerName"
+                  placeholder="Enter customer name"
+                  value={this.state.customerName}
+                  onChange={this.handleCustomerNameChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="customerGender">Email address</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="customerGender"
+                  placeholder="Enter Gender"
+                  value={this.state.customerGender}
+                  onChange={this.handleCustomerGenderChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Amount">Amount </label>
+                <input
+                  type="Amount"
+                  className="form-control"
+                  name="Amount"
+                  placeholder="Enter Amount"
+                  value={this.state.Amount}
+                  onChange={this.handleCustomerAmountChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="LoanTenure">Loan Tenure</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="LoanTenure"
+                  placeholder="Enter the message"
+                  value={this.state.LoanTenure}
+                  onChange={this.handleCustomerLoanTenureChange}
+                />
+              </div>
+              <br />
+              <button
+                type="button"
+                className="btn btn-lg btn-primary btn-block"
+                onClick={this.onClickAdd}
+              >
+                Register!
+              </button>
+            </form>
           </div>
-          <div className="textboxfrm">
-          <label>
-            {" "}
-            Name
-            <input
-              name="customerName"
-              type="text"
-              className="textboxfrm"
-              value={this.state.customerName}
-              onChange={this.handleCustomerNameChange}
-            />
-          </label>
         </div>
-        <div className="textboxfrm">
-          <label>
-            {" "}
-            Gender{" "}
-            <input
-              name="customerGender"
-              type="text"
-              className="textboxfrm"
-              value={this.state.customerGender}
-              onChange={this.handleCustomerGenderChange}
-            />{" "}
-          </label>
-        </div>
-        <div className="textboxfrm">
-          <label>
-            {" "}
-            Amount{" "}
-            <input
-              name="Amount"
-              type="text"
-              className="textboxfrm"
-              value={this.state.Amount}
-              onChange={this.handleCustomerAmountChange}
-            />{" "}
-          </label>
-        </div>
-        <div className="textboxfrm">
-          <label>
-            {" "}
-            LoanTenure
-            <input
-              name="LoanTenure"
-              type="text"
-              className="textboxfrm"
-              value={this.state.LoanTenure}
-              onChange={this.handleCustomerLoanTenureChange}
-            />{" "}
-          </label>
-        </div>
-        <div className="textboxfrm">
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={this.onClickAdd}
-          >
-            Add Customer
-          </button>
-        </div>
-      </form>
-      </div>
       </div>
     );
   }
