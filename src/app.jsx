@@ -10,8 +10,6 @@ import Upload from "./pages/uploadimg";
 import Uploadpdf from "./pages/uploadpdf";
 
 import Menu from "./components/menu";
-// import Navbar from "./components/Navbar";
-// import Landing from "./components/Landing";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";

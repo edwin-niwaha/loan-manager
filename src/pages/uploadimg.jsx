@@ -44,7 +44,7 @@ class FilesUploadComponent extends Component {
           <div className="col-md-6">
             <form onSubmit={this.onSubmit}>
               <div className="form-group files">
-                <h2>Upload Image File in React JS </h2>
+                <h2>Upload profile image </h2>
                 <input
                   type="file"
                   className="form-control"

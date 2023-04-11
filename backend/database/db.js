@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
 const db = {};
-const sequelize = new Sequelize("loan_mger", "root", "_Pearl!22@", {
+export const sequelize = new Sequelize("loan_mger", "root", "_Pearl!22@", {
   host: "localhost",
   dialect: "mysql",
   operatorsAliases: 0,
@@ -13,8 +13,8 @@ const sequelize = new Sequelize("loan_mger", "root", "_Pearl!22@", {
   },
 });
 
-db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
 sequelize
   .authenticate()

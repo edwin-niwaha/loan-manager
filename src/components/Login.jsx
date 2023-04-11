@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { login } from "./UserFunctions";
-
 class Login extends Component {
   constructor() {
     super();
@@ -61,6 +59,7 @@ class Login extends Component {
                   onChange={this.onChange}
                 />
               </div>
+              <br />
               <button
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"

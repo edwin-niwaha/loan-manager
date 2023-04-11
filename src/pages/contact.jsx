@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {
-  NotificationContainer,
-  NotificationManager,
-} from "react-notifications";
-
+import { toast } from "react-toastify";
 class Customer extends Component {
   constructor(props) {
     super(props);
@@ -16,26 +12,6 @@ class Customer extends Component {
     };
     this.onClickAdd.bind(this);
   }
-
-  onClickAdd = (event) => {
-    // alert("An essay was submitted: " + this.state.value);
-    event.preventDefault();
-    const { C_name, Email, MobileNumber, Message } = this.state;
-    const formValues = {
-      c_name: C_name,
-      email: Email,
-      mobileNumber: MobileNumber,
-      message: Message,
-    };
-
-    console.log(formValues);
-
-    axios
-      .post("http://localhost:3081/contact/add", formValues)
-      .then((res) =>
-        NotificationManager.success("User added successfully", "Success")
-      );
-  };
 
   handleC_nameChange = (e) => {
     this.setState({ C_name: e.target.value });
@@ -49,6 +25,28 @@ class Customer extends Component {
   };
   handleMessageChange = (e) => {
     this.setState({ Message: e.target.value });
+  };
+
+  onClickAdd = (event) => {
+    event.preventDefault();
+    const { C_name, Email, MobileNumber, Message } = this.state;
+    const formValues = {
+      c_name: C_name,
+      email: Email,
+      mobileNumber: MobileNumber,
+      message: Message,
+    };
+
+    console.log(formValues);
+
+    axios
+      .post("http://localhost:3081/contact/add", formValues)
+      .then((res) => {
+        toast.success("Registered successfully 😎");
+      })
+      .catch((err) => {
+        toast.error("Failed");
+      });
   };
 
   render() {

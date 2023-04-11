@@ -8,7 +8,7 @@ import uuid from "react-uuid";
 const router = Router();
 
 // User model
-import User from "../models/profile.js";
+import User from "../models/upload.js";
 
 const DIR = "./public/";
 

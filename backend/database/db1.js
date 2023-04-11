@@ -7,10 +7,11 @@ const conn = mysql.createConnection({
   database: "loan_mger", // // Replace with your database Name
   // port: 3081,
 });
+//
 
 conn.connect(function (err) {
   if (err) throw err;
-  console.log("Database is connected successfully !");
+  console.log("DB connected successfully !");
 });
 
 export default conn;

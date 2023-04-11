@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const profileSchema = new Schema(
+const uploadSchema = new Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
     profileImg: {
@@ -9,8 +9,8 @@ const profileSchema = new Schema(
     },
   },
   {
-    collection: "Profiles",
+    collection: "Upload",
   }
 );
 
-export default mongoose.model("Profiles", profileSchema);
+export default mongoose.model("Upload", uploadSchema);
